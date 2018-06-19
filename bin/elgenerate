@@ -165,7 +165,7 @@ const flash      = require("connect-flash");
     app = app.replace('{auth}', `
 // Enable authentication using session + passport
 app.use(session({
-  secret: 'irongenerator',
+  secret: 'elgenerator',
   resave: true,
   saveUninitialized: true,
   store: new MongoStore( { mongooseConnection: mongoose.connection })
@@ -254,12 +254,13 @@ app.use(require('node-sass-middleware')({
   copy_template('.env',                  `${path}/.env`);
   copy_template('js/gitignore',          `${path}/.gitignore`);
   copy_template('js/www',                `${path}/bin/www`);
+  copy_template('js/seeds.js',          `${path}/bin/seeds.js`)
   copy_template('js/routes/index.js',    `${path}/routes/index.js`)
   copy_template('hbs/index.hbs',         `${path}/views/index.hbs`);
   copy_template('hbs/layout.hbs',        `${path}/views/layout.hbs`);
   copy_template('hbs/error.hbs',         `${path}/views/error.hbs`);
   copy_template('hbs/not-found.hbs',     `${path}/views/not-found.hbs`);
-  copy_template('images/favicon.ico',    `${path}/public/images/favicon.ico`);
+  // copy_template('images/favicon.ico',    `${path}/public/images/favicon.ico`);
   copy_template('javascripts/script.js', `${path}/public/javascripts/script.js`);
 
   createFile(`${path}/package.json`, JSON.stringify(pkg, null, 2) + '\n');
@@ -285,8 +286,7 @@ app.use(require('node-sass-middleware')({
   console.log();
   console.log('   Start your app:');
   console.log('   $ npm start');
-  console.log();
-  console.log('   Happy Coding ❤️\n\n');
+
 }
 
 function copy_template(from, to) {
