@@ -5,7 +5,7 @@
 
 ## Introduction
 
-`ironhack_generator` is Ironhack's NPM package that allows students to quickly create express projects. The `Ironhack-generator` is strongly opinionated:
+`elgenerator` is Elliot's NPM package that allows students to quickly create express projects. If you want to train: There is also a training version :-D The `Elgenerator` is strongly opinionated:
 
 - Follows industry best practices
 - Predefined directory structure:
@@ -28,20 +28,20 @@
 
 ## Installation
 
-Install `ironhack_generator` as a global NPM package, so you can run it from anywhere in your computer:
+Install `elgenerator` as a global NPM package, so you can run it from anywhere in your computer:
 
 ```sh
-$ npm install -g ironhack_generator
+$ npm install -g elgenerator
 ```
 
 ## Quick Start
 
-The quickest way to get started with express is to utilize the executable `irongenerate(1)` to generate an application as shown below:
+The quickest way to get started with express is to utilize the executable `elgenerate(1)` to generate an application as shown below:
 
 Create the app:
 
 ```bash
-$ irongenerate awesome-project/
+$ elgenerate awesome-project/
 $ cd awesome-project/
 ```
 
