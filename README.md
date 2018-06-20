@@ -5,7 +5,7 @@
 
 ## Introduction
 
-`elgenerator` is Elliot's NPM package that allows students to quickly create express projects. If you want to train: There is also a training version :-D The `Elgenerator` is strongly opinionated:
+`elgenerator_trainer` is Elliot's NPM package that allows students to quickly create express projects. The `Elgenerator` is strongly opinionated:
 
 - Follows industry best practices
 - Predefined directory structure:
@@ -94,3 +94,4 @@ This generator can also be further configured with the following command line fl
 ## License
 
 [MIT](LICENSE)
+# elgenerator_trainer
