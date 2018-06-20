@@ -9,12 +9,12 @@ var rimraf = require('rimraf');
 var spawn = require('child_process').spawn;
 var validateNpmName = require('validate-npm-package-name')
 
-var binPath = path.resolve(__dirname, '../bin/irongenerate');
+var binPath = path.resolve(__dirname, '../bin/elgenerate');
 var TEMP_DIR = path.resolve(__dirname, '..', 'temp', String(process.pid + Math.random()))
 var fileCount = 16
 var titleRegex = /<title>Express.*<\/title>/
 
-describe('irongenerate(1)', function () {
+describe('elgenerate(1)', function () {
   before(function (done) {
     this.timeout(30000);
     cleanup(done);
@@ -44,7 +44,7 @@ describe('irongenerate(1)', function () {
     })
 
     it('should provide debug instructions', function () {
-      assert.ok(/DEBUG=irongenerate\(1\)-\(no-args\):\* (?:\& )?npm start/.test(ctx.stdout))
+      assert.ok(/DEBUG=elgenerate\(1\)-\(no-args\):\* (?:\& )?npm start/.test(ctx.stdout))
     });
 
     it('should have basic files', function () {
@@ -63,7 +63,7 @@ describe('irongenerate(1)', function () {
       var file = path.resolve(ctx.dir, 'package.json');
       var contents = fs.readFileSync(file, 'utf8');
       assert.equal(contents, '{\n'
-        + '  "name": "irongenerate(1)-(no-args)",\n'
+        + '  "name": "elgenerate(1)-(no-args)",\n'
         + '  "version": "0.0.0",\n'
         + '  "private": true,\n'
         + '  "scripts": {\n'
@@ -166,7 +166,7 @@ describe('irongenerate(1)', function () {
     it('should print usage', function (done) {
       runRaw(ctx.dir, ['--foo'], function (err, code, stdout, stderr) {
         if (err) return done(err);
-        assert.ok(/Usage: irongenerate/.test(stdout));
+        assert.ok(/Usage: elgenerate/.test(stdout));
         assert.ok(/--help/.test(stdout));
         assert.ok(/--version/.test(stdout));
         assert.ok(/error: unknown option/.test(stderr));
@@ -198,7 +198,7 @@ describe('irongenerate(1)', function () {
       it('should print usage', function (done) {
         runRaw(ctx.dir, ['--css'], function (err, code, stdout) {
           if (err) return done(err);
-          assert.ok(/Usage: irongenerate/.test(stdout));
+          assert.ok(/Usage: elgenerate/.test(stdout));
           assert.ok(/--help/.test(stdout));
           assert.ok(/--version/.test(stdout));
           done();
@@ -385,7 +385,7 @@ describe('irongenerate(1)', function () {
         if (err) return done(err);
         var files = parseCreatedFiles(stdout, ctx.dir);
         assert.equal(files.length, 0);
-        assert.ok(/Usage: irongenerate/.test(stdout));
+        assert.ok(/Usage: elgenerate/.test(stdout));
         assert.ok(/--help/.test(stdout));
         assert.ok(/--version/.test(stdout));
         done();
@@ -433,7 +433,7 @@ describe('irongenerate(1)', function () {
         if (err) return done(err);
         var files = parseCreatedFiles(stdout, ctx.dir);
         assert.equal(files.length, 0);
-        assert.ok(/Usage: irongenerate/.test(stdout));
+        assert.ok(/Usage: elgenerate/.test(stdout));
         assert.ok(/--help/.test(stdout));
         assert.ok(/--version/.test(stdout));
         done();
@@ -520,7 +520,7 @@ describe('irongenerate(1)', function () {
       it('should print usage', function (done) {
         runRaw(ctx.dir, ['--view'], function (err, code, stdout) {
           if (err) return done(err)
-          assert.ok(/Usage: irongenerate/.test(stdout))
+          assert.ok(/Usage: elgenerate/.test(stdout))
           assert.ok(/--help/.test(stdout))
           assert.ok(/--version/.test(stdout))
           done()
@@ -921,7 +921,7 @@ describe('irongenerate(1)', function () {
       it('should print usage', function (done) {
         runRaw(ctx.dir, ['--database'], function (err, code, stdout) {
           if (err) return done(err)
-          assert.ok(/Usage: irongenerate/.test(stdout))
+          assert.ok(/Usage: elgenerate/.test(stdout))
           assert.ok(/--help/.test(stdout))
           assert.ok(/--version/.test(stdout))
           done()
