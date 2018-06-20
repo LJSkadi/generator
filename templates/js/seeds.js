@@ -1,15 +1,15 @@
-/* STEP 0: MOVE THIS FILE TO THE bin-FOLDER
+/* STEP 0: This is needed if you want to fill your Database with documents
 /* STEP 1: INCLUDE ALL INFORMATION; WHICH IS NEEDED TO CREATE A DOCUMENT */
 // Include the OPM for translating your JS-Seeds to MongoDB documents
 const mongoose = require('mongoose');
-    // Include the where to find the SCHEMA for the seeds
+    // Include the path where to find the SCHEMA for the seeds
     const User = require('../models/user');
 
 // Include the module PASSPORT
 const passport = require("passport");
-    // Include Bcrypt to de- and encrypt passwords
+    // Include Bcrypt to de- and encrypt pre-set passwords
     const bcrypt = require("bcrypt");
-        // Set the bcryptSalt rounds
+        // Set the bcryptSalt rounds - Don't forget salt is a randomly generated signsequence that is attached to a password. So even, if you have an empty password, it is still possible to create a hash, because the salt will be generated
         const bcryptSalt = 10;
 
 // If I want to create a USER DATABASE and want to seed it, it makes sense to create passwords, which are already in the form a normal password would have

@@ -8,7 +8,12 @@ const Schema   = mongoose.Schema;
 /* STEP 3: Defining a Schema, which acts like a class for my objects */
 const userSchema = new Schema({
   username: String,
-  password: String
+  password: String,
+  role: {
+    type: String,
+    enum : ['POS1', 'POS2', 'POS3'],
+    default : 'POS3'
+  },
 }, {
   timestamps: {
     createdAt: 'created_at',

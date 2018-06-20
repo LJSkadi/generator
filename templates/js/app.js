@@ -37,7 +37,7 @@ mongoose
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
-// 
+// Store my BACKEND Framework in a variable
 const app = express();
 
 /* STEP 4: SET UP OF THE USED MIDDLEWARE */
@@ -46,6 +46,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+// Register hbs-Partials, if you use Partials
+hbs.registerPartials(__dirname + '/views/partials');
 
 /* STEP 5: SET UP OF THE VIEW ENGINE --> This is the point I tell my program where to find my views and images and to use hbs (handlebars) */
 // Express View engine setup

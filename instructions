@@ -1,0 +1,69 @@
+Create an new Project
+--> Access the Structure in the app.js and follow the Steps in every file
+
+Create Folders for all important parts:
+    - bin
+        --> Here we put our seeds.js
+
+    - models
+        --> Includes all used Schema for our models 
+            Typical structure (for C&P code visit the folder MODELS)
+            model.js
+    - node-modules
+        --> Includes all used modules (This folder shouldn't be pushed)
+    - public
+        --> Include 
+                image-Folder: 
+                        --> Include all used images used in the hbs-files for the VIEWS (-> view Folder)
+                        image.jpg
+                        picture.png
+                javascript-Folder:  
+                        --> Include all used js-files organizing the functionality of the hbs-files for the VIEWS (-> view Folder)
+                        --> These files must be included in the layout.hbs or on a specific .hbs-file
+                        jQuery-actions.js
+                stylesheets-Folder: 
+                        --> Include all used css-files organizing the style of the hbs-files for the VIEWS (-> view Folder)
+                            The general design is stored in a .scss-file and used in the layout
+                        style.scss
+                        style.css
+    - routes
+        --> Include all 
+                        js-files, which manage the routes and 
+                        Folders for js-files, which manage the private routes
+            Typical structure (for C&P code visit the folder ROUTES)
+            index.js
+            passportRouter.js
+            privateRouter.js
+    - views
+        --> Include all hbs-files and Folders for hbs-files, which are only shown on private routes
+            Typical structure (for C&P code visit the folder VIEWS)
+            FOLDER passport
+                        login.hbs
+                        logout.hbs
+                        signup.hbs
+                        private.hbs
+            layout.hbs
+            index.hbs
+            error.hbs
+    .env
+        --> Includes all information of your Server Setup - Should NEVER be PUBLISHed
+                Code for C&P
+                PORT=3000
+                ENV=development
+    .gitignore
+        --> List of all components, which shouldn't be pushed
+                Code for C&P
+                    # Dependency directory
+                    node_modules
+                    # Debug log from npm
+                    npm-debug.log
+                    # Environment Variables should NEVER be published
+                    .env
+
+    app.js
+        --> This is the front door of my app: Entrance or starting point 
+    package-lock.json
+
+    package.json 
+        --> Tells you which packages are need to be installed
+            Commonly used packages in the PACKAGE.JSON
